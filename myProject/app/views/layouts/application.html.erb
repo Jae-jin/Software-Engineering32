@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyProject</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= flash[:alert] %> <br>
+    <% if user_signed_in? %>
+      <%= link_to '로그아웃', logout_path, method:'delete' %>
+    <% else %>
+      <%= link_to '로그인', login_path %>
+      <%= link_to '회원가입', new_users_path %>
+    <% end %>
+  <%= yield %>
+  </body>
+</html>

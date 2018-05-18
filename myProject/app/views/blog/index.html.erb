@@ -1,0 +1,12 @@
+<h1>Hi</h1>
+
+    <form action="/blog/create">
+        <input type="text" name="writer" placeholder="작성자"> <br>
+        <textarea name="content"></textarea>
+        <input type="submit">
+    </form>
+    
+    <% @posts.each do |p| %>
+    <li><%=p.writer%> : <%=p.content%></li>
+    
+    <% end %>
